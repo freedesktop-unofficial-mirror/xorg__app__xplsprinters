@@ -3,12 +3,12 @@
 .\" <http://shell.ipoline.com/~elmert/comp/docbook2X/> 
 .\" Please send any bug reports, improvements, comments, patches, 
 .\" etc. to Steve Cheng <steve@ggi-project.org>.
-.TH "XPLSPRINTERS" "__mansuffix__" "13 February 2004" "" ""
+.TH "XPLSPRINTERS" "__mansuffix__" "14 June 2004" "" ""
 .SH NAME
 xplsprinters \- shows a list of Xprint printers and it's attributes
 .SH SYNOPSIS
 
-\fBxplsprinters\fR [ \fB-l\fR]  [ \fB-printer \fIprintername\fB\fR]  [ \fB-dump\fR]  [ \fB-h\fR] 
+\fBxplsprinters\fR [ \fB-printer \fIprintername\fB\fR]  [ \fB-d\fR]  [ \fB-l\fR]  [ \fB-dump\fR]  [ \fB-h\fR] 
 
 .SH "DESCRIPTION"
 .PP
@@ -18,17 +18,20 @@ of printers and attributes supported for a specific list of
 printers.
 .SH "OPTIONS"
 .TP
+\fB-printer \fIprintername\fB \fR
+printer to use
+.TP
 \fB-dump \fR
 dump all available printer attributes
 .TP
 \fB-h | -? \fR
 print usage
 .TP
+\fB-d \fR
+print description for each printer
+.TP
 \fB-l \fR
 list detailed printer attribute information
-.TP
-\fB-printer \fIprintername\fB \fR
-printer to use
 .SH "ENVIRONMENT"
 .TP
 \fBXPSERVERLIST \fR
@@ -64,7 +67,7 @@ would print:
 
 .nf
 printer: ps002@castor:18
-        comment=
+        description=
         model-identifier=HPDJ1600C
         default-medium=iso-a4
         default-input-tray=

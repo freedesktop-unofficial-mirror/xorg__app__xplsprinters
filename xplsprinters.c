@@ -219,7 +219,7 @@ void print_detailed_printer_info(XPPrinterRec *xp_rec, int detailLevel)
     }
     
     printf("printer: %s\n", xp_rec->name);
-    printf("\tcomment=%s\n", NULLSTR(xp_rec->desc));
+    printf("\tdescription=%s\n", NULLSTR(xp_rec->desc));
     printf("\tmodel-identifier=%s\n", NULLSTR(XpGetOneAttribute(pdpy, pcontext, XPPrinterAttr, "xp-model-identifier")));
   
     print_medium_sizes(pdpy, pcontext);
@@ -245,7 +245,7 @@ void print_printer_info(XPPrinterRec *xp_rec, int detailLevel)
     if( detailLevel < 1 )
       return;
       
-    printf("\tcomment=%s\n", NULLSTR(xp_rec->desc));
+    printf("\tdescription=%s\n", NULLSTR(xp_rec->desc));
 }
 
 int main (int argc, char *argv[])
@@ -271,6 +271,10 @@ int main (int argc, char *argv[])
           usage ();
         printername = argv[i];
       } 
+      else if( !strncmp("-d", arg, len) )
+      {
+        details = 1;
+      }
       else if( !strncmp("-l", arg, len) )
       {
         details = 2;
