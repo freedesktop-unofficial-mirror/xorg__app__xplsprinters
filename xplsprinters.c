@@ -115,10 +115,15 @@ void print_medium_sizes( Display *pdpy, XPContext pcontext )
 static
 void print_resolutions( Display *pdpy, XPContext pcontext )
 {
+    long              dpi;
     XpuResolutionList list;
     int               list_count;
     int               i;
-    char              *defresname; /* name of default resolution */
+
+    if( XpuGetResolution(pdpy, pcontext, &dpi) == 1 )
+    {
+      printf("\tdefault-printer-resolution=%ld\n", dpi);
+    }
 
     list = XpuGetResolutionList(pdpy, pcontext, &list_count);
     if( !list )
@@ -127,26 +132,10 @@ void print_resolutions( Display *pdpy, XPContext pcontext )
       return;
     }
 
-    defresname = XpGetOneAttribute(pdpy, pcontext, XPDocAttr, "default-printer-resolution");
-    if( defresname )
-    {
-      XpuResolutionRec *res = XpuFindResolutionByName(list, list_count, defresname);
-      if( res )
-      {
-        printf("\tdefault-printer-resolution=%s (%ldx%ld)\n", res->name, res->x_dpi, res->y_dpi);
-      }
-      else
-      {
-        fprintf(stderr, "XpuFindResolutionByName() returned no match for default resolution '%s'\n",
-                defresname);
-      }
-      XFree(defresname);
-    }
-
     for( i = 0 ; i < list_count ; i++ )
     {
       XpuResolutionRec *curr = &list[i];
-      printf("\tresolution=%s (%ldx%ld)\n", curr->name, curr->x_dpi, curr->y_dpi);
+      printf("\tresolution=%ld\n", curr->dpi);
     }
   
     XpuFreeResolutionList(list);
@@ -230,7 +219,7 @@ void print_detailed_printer_info(XPPrinterRec *xp_rec, int detailLevel)
     }
     
     printf("printer: %s\n", xp_rec->name);
-    printf("\tdescription=%s\n", NULLSTR(xp_rec->desc));
+    printf("\tcomment=%s\n", NULLSTR(xp_rec->desc));
     printf("\tmodel-identifier=%s\n", NULLSTR(XpGetOneAttribute(pdpy, pcontext, XPPrinterAttr, "xp-model-identifier")));
   
     print_medium_sizes(pdpy, pcontext);
@@ -247,12 +236,16 @@ void print_detailed_printer_info(XPPrinterRec *xp_rec, int detailLevel)
 static
 void print_printer_info(XPPrinterRec *xp_rec, int detailLevel)
 {   
+    Display    *pdpy;     /* X connection */
+    XPContext   pcontext; /* Xprint context */
+    long        dpi;
+
     printf("printer: %s\n", xp_rec->name);
     
     if( detailLevel < 1 )
       return;
       
-    printf("\tdescription=%s\n", NULLSTR(xp_rec->desc));
+    printf("\tcomment=%s\n", NULLSTR(xp_rec->desc));
 }
 
 int main (int argc, char *argv[])
@@ -278,10 +271,6 @@ int main (int argc, char *argv[])
           usage ();
         printername = argv[i];
       } 
-      else if( !strncmp("-d", arg, len) )
-      {
-        details = 1;
-      }
       else if( !strncmp("-l", arg, len) )
       {
         details = 2;
