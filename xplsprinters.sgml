@@ -163,6 +163,7 @@ printer: ps002@castor:18
 <!--
         <member><citerefentry><refentrytitle>xplsprinters</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry></member>
 -->
+        <member><citerefentry><refentrytitle>xprehashprinterlist</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry></member>
         <member><citerefentry><refentrytitle>xphelloworld</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry></member>
         <member><citerefentry><refentrytitle>xpxmhelloworld</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry></member>
         <member><citerefentry><refentrytitle>xpawhelloworld</refentrytitle><manvolnum>__mansuffix__</manvolnum></citerefentry></member>

@@ -3,7 +3,7 @@
 .\" <http://shell.ipoline.com/~elmert/comp/docbook2X/> 
 .\" Please send any bug reports, improvements, comments, patches, 
 .\" etc. to Steve Cheng <steve@ggi-project.org>.
-.TH "XPLSPRINTERS" "__mansuffix__" "14 June 2004" "" ""
+.TH "XPLSPRINTERS" "__mansuffix__" "29 June 2004" "" ""
 .SH NAME
 xplsprinters \- shows a list of Xprint printers and it's attributes
 .SH SYNOPSIS
@@ -83,4 +83,4 @@ printer: ps002@castor:18
 .fi
 .SH "SEE ALSO"
 .PP
-\fBXprint\fR(__miscmansuffix__), \fBX11\fR(__miscmansuffix__), \fBxphelloworld\fR(__mansuffix__), \fBxpxmhelloworld\fR(__mansuffix__), \fBxpawhelloworld\fR(__mansuffix__), \fBxpxthelloworld\fR(__mansuffix__), \fBxpsimplehelloworld\fR(__mansuffix__), \fBXserver\fR(__mansuffix__), \fBXprt\fR(__mansuffix__), \fBlibXp\fR(__libmansuffix__), \fBlibXprintUtils\fR(__libmansuffix__), \fBlibXprintAppUtils\fR(__libmansuffix__), \fBXmPrintShell\fR(__libmansuffix__), \fBXawPrintShell\fR(__libmansuffix__), Xprint FAQ (http://xprint.mozdev.org/docs/Xprint_FAQ.html <URL:http://xprint.mozdev.org/docs/Xprint_FAQ.html>), Xprint main site (http://xprint.mozdev.org/ <URL:http://xprint.mozdev.org/>)
+\fBXprint\fR(__miscmansuffix__), \fBX11\fR(__miscmansuffix__), \fBxprehashprinterlist\fR(__mansuffix__), \fBxphelloworld\fR(__mansuffix__), \fBxpxmhelloworld\fR(__mansuffix__), \fBxpawhelloworld\fR(__mansuffix__), \fBxpxthelloworld\fR(__mansuffix__), \fBxpsimplehelloworld\fR(__mansuffix__), \fBXserver\fR(__mansuffix__), \fBXprt\fR(__mansuffix__), \fBlibXp\fR(__libmansuffix__), \fBlibXprintUtils\fR(__libmansuffix__), \fBlibXprintAppUtils\fR(__libmansuffix__), \fBXmPrintShell\fR(__libmansuffix__), \fBXawPrintShell\fR(__libmansuffix__), Xprint FAQ (http://xprint.mozdev.org/docs/Xprint_FAQ.html <URL:http://xprint.mozdev.org/docs/Xprint_FAQ.html>), Xprint main site (http://xprint.mozdev.org/ <URL:http://xprint.mozdev.org/>)
