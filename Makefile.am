@@ -21,8 +21,8 @@
 
 bin_PROGRAMS = xplsprinters
 
-xplsprinters_CFLAGS = $(DEP_CFLAGS)
-xplsprinters_LDADD = $(DEP_LIBS)
+xplsprinters_CFLAGS = $(XPLSPRINTERS_CFLAGS)
+xplsprinters_LDADD = $(XPLSPRINTERS_LIBS)
 
 xplsprinters_SOURCES =	\
         xplsprinters.c
