@@ -27,7 +27,7 @@ xplsprinters_LDADD = $(XPLSPRINTERS_LIBS)
 xplsprinters_SOURCES =	\
         xplsprinters.c
 
-dist_man_MANS = \
+dist_man1_MANS = \
         xplsprinters.man
 
 EXTRA_DIST = \
